@@ -1,7 +1,9 @@
 package com.example.place_service.domain;
 
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+@Service
 public class PlaceService {
     private PlaceRepository placeRepository;
 
@@ -10,6 +12,6 @@ public class PlaceService {
     }
 
     public Mono<Place> create(Place place) {
-        placeRepository.save(place);
+        return placeRepository.save(place);
     }
 }
