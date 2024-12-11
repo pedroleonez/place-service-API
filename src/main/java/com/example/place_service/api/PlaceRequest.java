@@ -1,6 +1,9 @@
 package com.example.place_service.api;
 
+import jakarta.validation.constraints.NotBlank;
+
 import java.time.LocalDateTime;
 
-public record PlaceRequest(String name, String slug, String state, LocalDateTime createdAt, LocalDateTime updatedAt) {
+public record PlaceRequest(
+        @NotBlank String name, @NotBlank String state) {
 }
